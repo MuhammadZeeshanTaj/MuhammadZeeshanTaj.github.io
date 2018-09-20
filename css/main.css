@@ -1,0 +1,459 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,500");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: #e1eff6; }
+  body .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url("../images/background.jpg") no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    transition: all 0.8s; }
+
+.secondary-text {
+  color: #fcbf49; }
+
+.main {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: 2;
+  margin-top: 25vh;
+  padding-left: 2rem;
+  padding-right: 1rem;
+  animation: menu forwards;
+  animation-duration: 1500ms;
+  animation-delay: 0.5s;
+  opacity: 0; }
+
+@keyframes menu {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+  .main .name {
+    font-size: 4.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px #e1eff6; }
+  .main .about {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #fcbf49;
+    padding-left: 0.5rem; }
+  .main .icons a {
+    color: #e1eff6;
+    padding-right: 0.5rem;
+    text-decoration: none;
+    transition: all 0.8s; }
+    .main .icons a:hover {
+      color: #fcbf49;
+      cursor: pointer; }
+  .main .contacts {
+    margin-left: 8rem; }
+    .main .contacts .address {
+      display: none;
+      margin-top: 1rem;
+      margin-left: 3rem;
+      background-color: rgba(225, 239, 246, 0.3);
+      padding: 0.5rem;
+      width: 250px;
+      text-align: center;
+      color: #fcbf49;
+      line-height: 1.5rem;
+      letter-spacing: 0.1rem; }
+      .main .contacts .address.show {
+        display: block; }
+    .main .contacts .cell {
+      display: none;
+      margin-top: 1rem;
+      background-color: rgba(225, 239, 246, 0.3);
+      padding: 0.5rem;
+      width: 200px;
+      text-align: center;
+      color: #fcbf49;
+      line-height: 1.5rem;
+      letter-spacing: 0.1rem; }
+      .main .contacts .cell.show {
+        display: block; }
+
+header {
+  width: 100%; }
+  header .menu-btn {
+    position: fixed;
+    z-index: 5;
+    top: 30px;
+    right: 30px;
+    cursor: pointer;
+    transition: all 0.5s; }
+    header .menu-btn.close {
+      transform: rotate(180deg); }
+      header .menu-btn.close .btn-line {
+        background-color: #444; }
+        header .menu-btn.close .btn-line.one {
+          transform: rotate(45deg) translate(7px, 10px); }
+        header .menu-btn.close .btn-line.two {
+          opacity: 0; }
+        header .menu-btn.close .btn-line.three {
+          transform: rotate(-45deg) translate(5px, -5px); }
+    header .menu-btn .btn-line {
+      width: 35px;
+      height: 3px;
+      margin-bottom: 0.4rem;
+      background-color: #e1eff6;
+      border-radius: 30%;
+      box-shadow: 0px 0px 5px #e1eff6;
+      transition: all 0.8s; }
+  header .menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0.9; }
+    header .menu.show {
+      visibility: visible; }
+    header .menu .menu-branding {
+      width: 50%;
+      height: 100vh;
+      float: left;
+      overflow: hidden;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      transition: all 0.8s;
+      transform: translate3d(0, -100%, 0); }
+      header .menu .menu-branding.show {
+        transform: translate3d(0, 0, 0); }
+      header .menu .menu-branding .potrait-one {
+        background: url("../images/portrait-one.jpg");
+        background-size: cover;
+        width: 200px;
+        height: 200px;
+        border: 5px solid #fcbf49;
+        border-radius: 50%;
+        overflow: hidden; }
+        header .menu .menu-branding .potrait-one.show {
+          opacity: 0;
+          animation: nav-items 1500ms forwards;
+          animation-delay: 0.8s; }
+
+@keyframes nav-items {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+    header .menu .menu-nav {
+      width: 50%;
+      height: 100vh;
+      overflow: hidden;
+      float: left;
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      align-items: center;
+      background-color: #fdd994;
+      transition: all 0.8s;
+      transform: translate3d(0, 100%, 0); }
+      header .menu .menu-nav.show {
+        transform: translate3d(0, 0, 0); }
+      header .menu .menu-nav .nav-items {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center; }
+        header .menu .menu-nav .nav-items.show {
+          opacity: 0;
+          animation: nav-items 1500ms forwards;
+          animation-delay: 0.8s; }
+
+@keyframes nav-items {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+        header .menu .menu-nav .nav-items .nav-link {
+          display: inline-block;
+          text-decoration: none;
+          text-transform: uppercase;
+          color: #444;
+          font-size: 2.2rem;
+          padding-bottom: 0.5rem;
+          transition: all 0.8s; }
+          header .menu .menu-nav .nav-items .nav-link:hover, header .menu .menu-nav .nav-items .nav-link.active {
+            color: #fff; }
+
+.aboutMe {
+  margin-top: 5vh;
+  margin-left: 5vw;
+  overflow: none; }
+  .aboutMe .heading {
+    font-size: 4.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px #e1eff6; }
+  .aboutMe .line {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #fcbf49;
+    padding-left: 0.5rem; }
+  .aboutMe .two-grids {
+    margin-top: 2rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-areas: 'potrait info info'; }
+    .aboutMe .two-grids .potrait-two {
+      margin-top: 2rem;
+      grid-area: potrait;
+      background: url("../images/portrait-two.jpg");
+      background-size: cover;
+      width: 250px;
+      height: 250px;
+      border: 5px solid #fcbf49;
+      border-radius: 50%;
+      align-items: center; }
+    .aboutMe .two-grids .info {
+      grid-area: info;
+      border-left: 3px solid #fcbf49;
+      padding-left: 0.5rem;
+      padding-top: 0.5rem;
+      background-color: rgba(225, 239, 246, 0.3); }
+      .aboutMe .two-grids .info p {
+        line-height: 1.5rem;
+        padding: 0.5rem 1rem; }
+      .aboutMe .two-grids .info .languages {
+        list-style: none;
+        padding: 0.5rem 1rem; }
+        .aboutMe .two-grids .info .languages li {
+          padding-bottom: 0.5rem; }
+
+.myWork {
+  margin-top: 5vh;
+  margin-left: 5vw;
+  margin-bottom: 5vh; }
+  .myWork .heading {
+    font-size: 4.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px #e1eff6; }
+  .myWork .line {
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border-left: 3px solid #fcbf49;
+    padding-left: 0.5rem; }
+  .myWork .multiple-grids {
+    margin-right: 2.8rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+    .myWork .multiple-grids .projects {
+      padding-left: 0rem;
+      padding-right: 1.5rem;
+      padding-bottom: 1rem; }
+      .myWork .multiple-grids .projects img {
+        width: 100%;
+        border-radius: 5px;
+        transition: all 0.7s;
+        filter: blur(1px); }
+        .myWork .multiple-grids .projects img:hover {
+          filter: blur(0);
+          transform: scale(1.2); }
+      .myWork .multiple-grids .projects .project-img {
+        display: block;
+        overflow: hidden;
+        margin-bottom: 0.3rem;
+        text-align: center; }
+      .myWork .multiple-grids .projects .code-link {
+        display: inline-block;
+        width: 100%;
+        border-radius: 5px;
+        text-align: center;
+        padding: 0.5rem;
+        color: #fdd994;
+        background-color: rgba(225, 239, 246, 0.3); }
+
+@media all and (max-width: 700px) {
+  header .menu-btn {
+    z-index: 5; }
+    header .menu-btn.close .btn-line {
+      color: #333; }
+  header .menu {
+    opacity: 1; }
+    header .menu #menu-branding {
+      width: 100%;
+      float: none;
+      height: 35vh;
+      padding: 0.5rem;
+      opacity: 0.9;
+      transform: translate3d(-100%, 0, 0); }
+      header .menu #menu-branding.show {
+        transform: translate3d(0, 0, 0); }
+      header .menu #menu-branding #potrait-one {
+        width: 150px;
+        height: 150px;
+        border: 3px solid #fcbf49; }
+    header .menu #menu-nav {
+      opacity: 0.9;
+      width: 100%;
+      float: none;
+      height: 65vh;
+      transform: translate3d(100%, 0, 0); }
+      header .menu #menu-nav.show {
+        transform: translate3d(0, 0, 0); }
+      header .menu #menu-nav #nav-items li a#nav-link {
+        font-size: 2rem; }
+  .main {
+    text-align: center;
+    margin-top: 25vh; }
+    .main .name {
+      font-size: 4rem;
+      font-weight: 400;
+      padding-right: 1rem; }
+    .main .about {
+      font-weight: 300;
+      font-size: 1.3rem;
+      padding-right: 1rem;
+      border: none; }
+    .main .contacts {
+      margin-left: 4rem;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center; }
+      .main .contacts .address {
+        padding: 0.3rem 0.4rem;
+        width: 240px;
+        line-height: 1.4rem;
+        border-radius: 5px; }
+      .main .contacts .cell {
+        padding: 0.3rem 0.4rem;
+        width: 160px;
+        line-height: 1.4rem;
+        border-radius: 5px; }
+  .aboutMe {
+    margin-top: 15vh;
+    overflow: none; }
+    .aboutMe .heading {
+      font-size: 4rem;
+      font-weight: 400;
+      padding-right: 1rem; }
+    .aboutMe .line {
+      font-weight: 300;
+      font-size: 1.3rem;
+      border-left: none;
+      padding-right: 1rem; }
+    .aboutMe .two-grids {
+      grid-template-areas: 'potrait' 'info'; }
+      .aboutMe .two-grids .potrait-two {
+        margin: auto;
+        width: 200px;
+        height: 200px; }
+      .aboutMe .two-grids .info {
+        text-align: left; }
+  .myWork {
+    margin-top: 15vh;
+    margin-bottom: 5vh; }
+    .myWork .heading {
+      font-size: 4rem;
+      font-weight: 400;
+      padding-right: 1rem; }
+    .myWork .line {
+      font-weight: 300;
+      font-size: 1.3rem;
+      padding-right: 1rem;
+      border-left: none; }
+    .myWork .multiple-grids {
+      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); } }
+
+@media all and (max-width: 480px) {
+  .main {
+    text-align: center; }
+    .main .name {
+      font-size: 2.5rem;
+      font-weight: 400;
+      padding-right: 1rem; }
+    .main .about {
+      font-size: 1rem;
+      padding-right: 1rem;
+      border: none; }
+    .main .icons a {
+      font-size: 0.8rem; }
+    .main .contacts {
+      margin-left: 0rem;
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center; }
+      .main .contacts .address {
+        margin-left: -2rem;
+        font-size: 0.8rem;
+        padding: 0.1rem;
+        width: 200px;
+        border-radius: 5px; }
+      .main .contacts .cell {
+        font-size: 0.8rem;
+        padding: 0.1rem;
+        width: 130px;
+        border-radius: 5px; }
+  .aboutMe {
+    margin-top: 15vh;
+    overflow: none; }
+    .aboutMe .heading {
+      font-weight: 400;
+      font-size: 2.5rem;
+      padding: 0rem 0.5rem; }
+    .aboutMe .two-grids {
+      grid-template-areas: 'potrait' 'info'; }
+      .aboutMe .two-grids .potrait-two {
+        margin: auto;
+        width: 150px;
+        height: 150px; }
+      .aboutMe .two-grids .info {
+        text-align: left; }
+        .aboutMe .two-grids .info h2 {
+          font-weight: normal;
+          font-size: 1.3rem; }
+        .aboutMe .two-grids .info p {
+          font-weight: 400;
+          font-size: 1rem;
+          padding: 0.5rem 1rem; }
+        .aboutMe .two-grids .info .languages {
+          list-style: none;
+          padding: 0.5rem 1rem; }
+          .aboutMe .two-grids .info .languages li {
+            font-weight: normal;
+            padding-bottom: 0.5rem;
+            font-size: 1rem; }
+  .myWork {
+    margin-top: 15vh; }
+    .myWork .heading {
+      font-size: 2.5rem;
+      font-weight: 400;
+      padding-right: 1rem; }
+    .myWork .line {
+      font-weight: 300;
+      font-size: 1.1rem;
+      padding-right: 1rem;
+      border-left: none; }
+    .myWork .multiple-grids {
+      margin: auto;
+      padding-right: 0.5rem; } }
